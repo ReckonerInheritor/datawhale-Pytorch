@@ -14,7 +14,11 @@ pip install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp36-cp36m-
 ### 5 PyTorch基础概念
 #### Tensor
 表示的是一个多维的矩阵，比如零维就是一个点，一维就是向量，二维就是一般的矩阵，多维就相当于一个多维的数组。
-
+#### Variable
+Variable主要包含三个属性。  
+•data : 保存Variable所包含的Tensor。  
+•grad : 保存data对应的梯度，grad也是个Variable, 而不是Tensor, 它和data的形状—样。  
+•grad fn : 指向一个Functio n对象，这个Function用来反向传播计算输入的梯度。  
 ### 6 通用代码实现流程(实现一个深度学习的代码流程)
 加载数据和标签（如手写数字识别中的数据就是一张图片，而一张图片在计算机里面是一个由整数组成的矩阵，它的标签是当前这个图片到底是数字几）  
 设计网络结构（如是共有几层神经网络，每层输入输出的矩阵格式，每层的激活函数是怎样的，当前层到底是卷积层还是循环神经网络层等等）  
